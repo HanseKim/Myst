@@ -2,6 +2,6 @@
 
 int main(){
 
-	printf("Hello, Introduction to UNIX Programming\n");
+	printf("Hello test!\n");
 	return 0;
 }
