@@ -81,6 +81,11 @@ const Header: React.FC<HeaderProps> = ({
               placeholder="비밀번호"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleLogin(); // 엔터 키를 누르면 로그인 실행
+                }
+              }}
             />
             <button onClick={handleLogin}>로그인</button>
             {errorMessage && <p className="error">{errorMessage}</p>}
