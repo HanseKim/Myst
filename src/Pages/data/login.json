@@ -1,0 +1,15 @@
+[
+  {
+    "id": "test",
+    "password": "123",
+    "name": "sehan",
+    "address": "부산시 해운대구 해운대로 781번길23",
+    "mylike": [1, 2]
+  },
+  {
+    "id": "test2",
+    "password": "123",
+    "name": "what",
+    "mylike": [1, 2]
+  }
+]
