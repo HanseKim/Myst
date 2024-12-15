@@ -1,6 +1,6 @@
 {
   "homepage_comment": "로컬에서 아이콘 경로때문에 . 사용 깃허브 페이지를 할려고 하면 홈페이지 값에 https://HanseKim.github.io/react-test(이건 파일명으로) 넣기",
-  "homepage": ".",
+  "homepage": "https://HanseKim.github.io/react-test",
   "name": "react-test",
   "version": "0.1.0",
   "private": true,
