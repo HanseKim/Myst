@@ -11,11 +11,11 @@ type HomeProps = {
   Godetail: (id: number) => void;
 };
 
-const Home: React.FC<HomeProps> = ({ id, detail, Godetail }) => {
+const Home: React.FC<HomeProps> = ({ id, detail, Godetail, Gohome }) => {
   return (
     <div>
       {detail ? ( // null 체크
-        <Detail id={id} /> // id가 null이 아닐 때 Detail 컴포넌트 렌더링
+        <Detail id={id} Goback={Gohome} /> // id가 null이 아닐 때 Detail 컴포넌트 렌더링
       ) : (
         <div className="container">
           <DataListComponent Godetail={Godetail} />

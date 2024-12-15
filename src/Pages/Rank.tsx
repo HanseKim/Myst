@@ -8,9 +8,10 @@ type RankProps = {
   id: number;
   Gohome: () => void;
   Godetail: (id: number) => void;
+  Goback: () => void;
 };
 
-const Rank: React.FC<RankProps> = ({ id, detail, Godetail }) => {
+const Rank: React.FC<RankProps> = ({ id, detail, Godetail, Goback }) => {
   const [dataList, setDataList] = useState<any[]>(data);
   useEffect(() => {
     let sortedData;
@@ -20,8 +21,9 @@ const Rank: React.FC<RankProps> = ({ id, detail, Godetail }) => {
 
   return (
     <div>
+      <div className="w-[100%] text-center">랭킹</div>
       {detail ? ( // null 체크
-        <Detail id={id} /> // id가 null이 아닐 때 Detail 컴포넌트 렌더링
+        <Detail id={id} Goback={Goback} /> // id가 null이 아닐 때 Detail 컴포넌트 렌더링
       ) : (
         <div className="container">
           <div className="button-container">
@@ -32,7 +34,7 @@ const Rank: React.FC<RankProps> = ({ id, detail, Godetail }) => {
                   className="flex-col slide list"
                   onClick={() => Godetail(item.id)} // 클릭 시 Godetail 호출
                 >
-                  <div className="font-bold text-center">{item.name}</div>
+                  <div className="font-bold text-center">{item.rank}</div>
                   <div className="flex">
                     <div>
                       <img

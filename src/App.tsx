@@ -75,6 +75,7 @@ const App: React.FC = () => {
             detail={detail}
             Godetail={Godetail}
             Handledetail={Handledetail}
+            Goback={GoRank}
           />
         );
       case "stylist":

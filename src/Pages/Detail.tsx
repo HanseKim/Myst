@@ -3,9 +3,10 @@ import data from "./data/data.json";
 
 type DetailProps = {
   id: number;
+  Goback?: () => void;
 };
 
-const Detail: React.FC<DetailProps> = ({ id }) => {
+const Detail: React.FC<DetailProps> = ({ id, Goback }) => {
   const [dataList, setDataList] = useState<any[]>([]);
   const [idData, setIdData] = useState<any>(null);
 
@@ -24,7 +25,8 @@ const Detail: React.FC<DetailProps> = ({ id }) => {
 
   return (
     <div>
-      <h2>{idData.name}</h2>
+      {Goback ? <button onClick={Goback}>뒤로 가기</button> : <></>}
+
       <img src={idData.img} alt={idData.name} />
       <div>탑: {idData.top}</div>
       <div>바텀: {idData.bottom}</div>
