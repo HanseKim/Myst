@@ -35,16 +35,20 @@ const App: React.FC = () => {
   };
   const GoRank = () => {
     setpage("rank");
+    Handledetail();
   };
   const GoStylist = () => {
     setpage("stylist");
+    Handledetail();
   };
   const Golike = () => {
     setpage("like");
+    Handledetail();
   };
   const Gomypage = (user: any) => {
     setpage("mypage");
     setCurrentUser(user);
+    Handledetail();
   };
 
   useEffect(() => {

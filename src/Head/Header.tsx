@@ -54,7 +54,6 @@ const Header: React.FC<HeaderProps> = ({
     closeModal();
     setPassword("");
     setCurrentUser(null);
-    setCurrentUser(null); // 로그아웃 시 현재 사용자 초기화
   };
 
   const openModal = () => setIsOpen(true);
