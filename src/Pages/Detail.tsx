@@ -24,14 +24,29 @@ const Detail: React.FC<DetailProps> = ({ id, Goback }) => {
   }
 
   return (
-    <div>
-      {Goback ? <button onClick={Goback}>뒤로 가기</button> : <></>}
-
-      <img src={idData.img} alt={idData.name} />
-      <div>탑: {idData.top}</div>
-      <div>바텀: {idData.bottom}</div>
-      <div>신발: {idData.shoes}</div>
-      <div>액세서리: {idData.accessories}</div>
+    <div className="flex">
+      {Goback ? (
+        <div className="flex flex-row w-full">
+          <button
+            className="w-[10%] h-16 m-1 bg-gray-200 rounded-full"
+            onClick={Goback}
+          >
+            &lt;
+          </button>
+          <div className="w-[80%] items-center font-bold text-center p-4">
+            {idData.name}
+          </div>
+        </div>
+      ) : null}
+      <div className="flex flex-row">
+        <img className="w-[40%] h-[500px]" src={idData.img} alt={idData.name} />
+        <div className="w-[40%] ml-4 text-center">
+          <div className="m-4">탑: {idData.top}</div>
+          <div className="m-4">바텀: {idData.bottom}</div>
+          <div className="m-4">신발: {idData.shoes}</div>
+          <div className="m-4">액세서리: {idData.accessories}</div>
+        </div>
+      </div>
     </div>
   );
 };
