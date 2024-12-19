@@ -15,10 +15,14 @@ const App: React.FC = () => {
   const [detail, setDetail] = useState(0); //detail -> 0: 기본 , 1:스타일 , 2: 스타일리스트
   const [page, setpage] = useState("home");
 
-  const clickLogin = () => {
-    setlog((prev) => !prev);
-    const log = login ? "아웃" : "인";
-    console.log("로그" + log + " 됐습니다.");
+  const Login = (user: any) => {
+    setlog(true);
+    setCurrentUser(user);
+    console.log("로그인됐습니다");
+  };
+  const Logout = () => {
+    setlog(false);
+    console.log("로그아웃됐습니다");
   };
   //id : 아이디 값 / detail -> 0: 기본 , 1:스타일 , 2: 스타일리스트
   const Godetail = (id: number, detail: number) => {
@@ -83,7 +87,7 @@ const App: React.FC = () => {
           <Stylist detail={detail} Godetail={Godetail} GoStylist={GoStylist} />
         );
       case "like":
-        return <Like user={currentUser} login={login} Golike={Golike} />;
+        return <Like user={currentUser} login={login} />;
       case "mypage":
         return <Mypage user={currentUser} />;
       default:
@@ -104,7 +108,8 @@ const App: React.FC = () => {
     <div>
       <Header
         login={login}
-        clickLogin={clickLogin}
+        Login={Login}
+        Logout={Logout}
         Gohome={Gohome}
         Gorank={GoRank}
         GoStylist={GoStylist}

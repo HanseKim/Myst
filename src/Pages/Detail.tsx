@@ -3,7 +3,7 @@ import data from "./data/data.json";
 
 type DetailProps = {
   id: number;
-  Goback: () => void;
+  Goback?: () => void;
 };
 
 const Detail: React.FC<DetailProps> = ({ id, Goback }) => {

@@ -5,7 +5,8 @@ import Modal from "./Modal";
 
 type HeaderProps = {
   login: boolean;
-  clickLogin: () => void;
+  Login: (user: any) => void;
+  Logout: () => void;
   Gohome: () => void;
   Gorank: () => void;
   GoStylist: () => void;
@@ -15,7 +16,8 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({
   login,
-  clickLogin,
+  Login,
+  Logout,
   Gohome,
   Gorank,
   GoStylist,
@@ -39,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({
     if (user && user.password === password) {
       setCurrentUser(user); // 현재 사용자 설정
       setErrorMessage("");
-      clickLogin();
+      Login(user);
       Gohome();
       closeModal();
     } else {
@@ -50,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   const handleLogout = () => {
-    clickLogin();
+    Logout();
     closeModal();
     setPassword("");
     setCurrentUser(null);
