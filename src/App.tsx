@@ -9,26 +9,25 @@ import Mypage from "./Pages/Mypage";
 
 const App: React.FC = () => {
   const [login, setlog] = useState(false);
+  const [currentUser, setCurrentUser] = useState<any>(null); // 현재 사용자 상태 추가
+  const [id, setId] = useState<number>(0); // null로 초기화
+  const [stylistid, setStlistid] = useState<number>(0);
+  const [detail, setDetail] = useState(0); //detail -> 0: 기본 , 1:스타일 , 2: 스타일리스트
+  const [page, setpage] = useState("home");
 
   const clickLogin = () => {
     setlog((prev) => !prev);
     const log = login ? "아웃" : "인";
     console.log("로그" + log + " 됐습니다.");
   };
-
-  const [currentUser, setCurrentUser] = useState<any>(null); // 현재 사용자 상태 추가
-  const [id, setId] = useState<number>(0); // null로 초기화
-  const [detail, setDetail] = useState(false);
-
-  const Godetail = (id: number) => {
+  //id : 아이디 값 / detail -> 0: 기본 , 1:스타일 , 2: 스타일리스트
+  const Godetail = (id: number, detail: number) => {
     setId(id);
-    setDetail(true);
+    setDetail(detail);
   };
   const Handledetail = () => {
-    setDetail(false);
+    setDetail(0);
   };
-
-  const [page, setpage] = useState("home");
   const Gohome = () => {
     setpage("home");
     Handledetail();
@@ -62,9 +61,10 @@ const App: React.FC = () => {
           <Home
             Gohome={Gohome}
             id={id}
+            stylistid={stylistid}
             detail={detail}
             Godetail={Godetail}
-            Handledetail={Handledetail}
+            GoStylist={GoStylist}
           />
         );
       case "rank":
@@ -79,9 +79,11 @@ const App: React.FC = () => {
           />
         );
       case "stylist":
-        return <Stylist />;
+        return (
+          <Stylist detail={detail} Godetail={Godetail} GoStylist={GoStylist} />
+        );
       case "like":
-        return <Like user={currentUser} />;
+        return <Like user={currentUser} login={login} Golike={Golike} />;
       case "mypage":
         return <Mypage user={currentUser} />;
       default:
@@ -89,9 +91,10 @@ const App: React.FC = () => {
           <Home
             Gohome={Gohome}
             id={id}
+            stylistid={stylistid}
             detail={detail}
             Godetail={Godetail}
-            Handledetail={Handledetail}
+            GoStylist={GoStylist}
           />
         );
     }

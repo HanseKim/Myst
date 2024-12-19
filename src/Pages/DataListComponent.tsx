@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import data from "./data/data.json";
 
 type DataListComponentProps = {
-  Godetail: (id: number) => void;
+  Godetail: (id: number, detail: number) => void;
 };
 
 const DataListComponent: React.FC<DataListComponentProps> = ({ Godetail }) => {
@@ -52,7 +52,7 @@ const DataListComponent: React.FC<DataListComponentProps> = ({ Godetail }) => {
             <li
               key={item.id}
               className="flex-col slide list"
-              onClick={() => Godetail(item.id)} // 클릭 시 Godetail 호출
+              onClick={() => Godetail(item.id, 1)} // 클릭 시 Godetail 호출
             >
               <div className="font-bold text-center">{item.name}</div>
               <div className="flex">

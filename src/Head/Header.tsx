@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({
   const [dataList, setDataList] = useState<any[]>([]);
   const [id, setId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(0);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [currentUser, setCurrentUser] = useState<any>(null); // 현재 사용자 상태 추가
 
@@ -56,20 +56,29 @@ const Header: React.FC<HeaderProps> = ({
     setCurrentUser(null);
   };
 
-  const openModal = () => setIsOpen(true);
+  const openModal = () => setIsOpen(1);
+
   const closeModal = () => {
-    setIsOpen(false);
+    setIsOpen(0);
     setId("");
     setPassword("");
     setErrorMessage("");
   };
 
+  const openJoin = () => {
+    setIsOpen(2);
+  };
+
+  const openLogin = () => {
+    setIsOpen(1);
+  };
+
   return (
     <div className="border-2 HeaderCont">
-      <Modal isOpen={isOpen} onClose={closeModal}>
+      <Modal isOpen={isOpen} onClose={closeModal} openLogin={openLogin}>
         {!login ? (
-          <div>
-            <h1>로그인</h1>
+          <div className="flex">
+            <div className="text-center w-[100%] font-bold">로그인</div>
             <input
               type="text"
               placeholder="사용자 이름"
@@ -87,7 +96,15 @@ const Header: React.FC<HeaderProps> = ({
                 }
               }}
             />
-            <button onClick={handleLogin}>로그인</button>
+            <div className="flex flex-col">
+              <button className="bg-gray-300 rounded-xl" onClick={handleLogin}>
+                로그인
+              </button>
+              <button className="bg-green-50 rounded-xl" onClick={openJoin}>
+                회원가입
+              </button>
+            </div>
+
             {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
         ) : (

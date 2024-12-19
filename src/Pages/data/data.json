@@ -8,7 +8,7 @@
     "bottom": "one-bottom",
     "shoes": "one-shoes",
     "accessories": "one-accessories",
-    "rank": 3,
+    "like": 999,
     "date": "2024-12-01",
     "price": 300000
   },
@@ -16,12 +16,12 @@
     "id": 2,
     "name": "스타일 2",
     "head": "jeep",
-    "img": "https://HanseKim.github.io/Myst/img/images.png",
+    "img": "https://HanseKim.github.io/Myst/img/images3.png",
     "top": "two-top",
     "bottom": "two-bottom",
     "shoes": "two-shoes",
     "accessories": "two-accessories",
-    "rank": 1,
+    "like": 123,
     "date": "2024-12-30",
     "price": 150000
   },
@@ -34,7 +34,7 @@
     "bottom": "three-bottom",
     "shoes": "three-shoes",
     "accessories": "three-accessories",
-    "rank": 5,
+    "like": 901,
     "date": "2024-12-23",
     "price": 400000
   },
@@ -47,7 +47,7 @@
     "bottom": "four-bottom",
     "shoes": "four-shoes",
     "accessories": "four-accessories",
-    "rank": 6,
+    "like": 430,
     "date": "2024-12-09",
     "price": 900000
   },
@@ -55,26 +55,13 @@
     "id": 5,
     "name": "스타일 5",
     "head": "jeep",
-    "img": "https://HanseKim.github.io/Myst/img/images.png",
+    "img": "https://HanseKim.github.io/Myst/img/images3.png",
     "top": "five-top",
     "bottom": "five-bottom",
     "shoes": "five-shoes",
     "accessories": "five-accessories",
-    "rank": 2,
+    "like": 249,
     "date": "2024-12-10",
     "price": 1200000
-  },
-  {
-    "id": 6,
-    "name": "스타일 6",
-    "head": "jeep",
-    "img": "https://HanseKim.github.io/Myst/img/images3.png",
-    "top": "six-top",
-    "bottom": "six-bottom",
-    "shoes": "six-shoes",
-    "accessories": "six-accessories",
-    "rank": 4,
-    "date": "2024-12-03",
-    "price": 310000
   }
 ]

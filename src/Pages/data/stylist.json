@@ -1,0 +1,26 @@
+[
+  {
+    "stylistid": 1,
+    "name": "스타일리스트 1",
+    "list": [1, 2],
+    "img": "https://HanseKim.github.io/Myst/img/images.png"
+  },
+  {
+    "stylistid": 2,
+    "name": "스타일리스트 2",
+    "list": [3],
+    "img": "https://HanseKim.github.io/Myst/img/images.png"
+  },
+  {
+    "stylistid": 3,
+    "name": "스타일리스트 3",
+    "list": [4],
+    "img": "https://HanseKim.github.io/Myst/img/images.png"
+  },
+  {
+    "stylistid": 4,
+    "name": "스타일리스트 4",
+    "list": [5, 6],
+    "img": "https://HanseKim.github.io/Myst/img/images.png"
+  }
+]

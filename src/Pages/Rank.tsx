@@ -3,11 +3,11 @@ import data from "./data/data.json";
 import Detail from "./Detail";
 
 type RankProps = {
-  detail: boolean;
+  detail: number;
   Handledetail: () => void;
   id: number;
   Gohome: () => void;
-  Godetail: (id: number) => void;
+  Godetail: (id: number, detail: number) => void;
   Goback: () => void;
 };
 
@@ -15,7 +15,7 @@ const Rank: React.FC<RankProps> = ({ id, detail, Godetail, Goback }) => {
   const [dataList, setDataList] = useState<any[]>(data);
   useEffect(() => {
     let sortedData;
-    sortedData = sortedData = [...data].sort((a, b) => a.rank - b.rank); // id 기준 정렬
+    sortedData = sortedData = [...data].sort((a, b) => b.like - a.like); // id 기준 정렬
     setDataList(sortedData);
   }, []);
 
@@ -32,7 +32,7 @@ const Rank: React.FC<RankProps> = ({ id, detail, Godetail, Goback }) => {
                 <li
                   key={item.id}
                   className="flex-col slide list"
-                  onClick={() => Godetail(item.id)} // 클릭 시 Godetail 호출
+                  onClick={() => Godetail(item.id, 1)} // 클릭 시 Godetail 호출
                 >
                   <div className="font-bold text-center">{item.rank}</div>
                   <div className="flex">
@@ -50,6 +50,7 @@ const Rank: React.FC<RankProps> = ({ id, detail, Godetail, Goback }) => {
                       <div>{item.accessories}</div>
                       <div>{item.date}</div>
                       <div>{item.price / 10000}만원</div>
+                      <div>좋아요 : {item.like}</div>
                     </div>
                   </div>
                 </li>
